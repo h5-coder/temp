@@ -1,10 +1,10 @@
 // js
-import 'babel-polyfill'; // 解决IE兼容问题
 import Vue from 'vue';
 import router from './router';
 import ElementUI from 'element-ui';
 import store from './store/';
 import '@/../static/js/cookie.js';
+// import '@/../static/js/toFixed.js';
 import './filters/index.js';
 import '@/directives/index.js';
 
@@ -19,21 +19,6 @@ import './less/index.less';
 process.env.MOCK && require('./mock/index.js');
 
 Vue.use(ElementUI);
-
-router.beforeEach((to, from, next) => {
-    // if (false) {
-
-    //     next({
-    //         path: '/index',
-    //         query: {
-    //             redirect: to.fullPath,
-    //         }
-    //     })
-    // } else {
-    //     next()
-    // }
-    next();
-});
 
 // Vue.config.silent = true;
 Vue.config.productionTip = false;
