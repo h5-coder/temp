@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="div"></div>
+</body>
+<script>
+    function getDivTopLength(obj) {
+            var div = document.getElementById(obj);
+            var topLength = div.getBoundingClientRect().top; //div离屏幕上边距离（长度）
+            var bottomLength = div.getBoundingClientRect().bottom; //div离屏幕下边距离（长度）
+
+            var leftLength = div.getBoundingClientRect().left; //div离屏幕左边距离（长度）
+            var rightLength = div.getBoundingClientRect().right; //div离屏幕右边距离（长度）
+
+            return "topLength=" + topLength + "；bottomLength=" + bottomLength + "；leftLength=" + leftLength + "；rightLength=" + rightLength;
+        }
+        window.onload=function(){
+             console.log(getDivTopLength("div"));
+        }
+</script>
+</html>
