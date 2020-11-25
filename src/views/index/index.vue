@@ -15,7 +15,7 @@ export default {
     // 实例的数据对象
     data() {
         return {
-            list: ["66666666666"]
+            list: []
         };
     },
     // 数组或对象，用于接收来自父组件的数据
@@ -27,7 +27,11 @@ export default {
     // 生命周期函数 请求写在created中,echarts写在mounted中
     created() {},
     beforeMount() {},
-    mounted() {},
+    mounted() {
+        setTimeout(() => {
+            this.list = [`<p>marqueemarqueemarqueemarquee</p>`];
+        }, 500);
+    },
 
     beforeDestroy() {},
     destroyed() {},
