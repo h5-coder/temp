@@ -49,17 +49,25 @@ export default {
                 this.$refs.box.style.transform =
                     "translateX(" + distance + "px)";
             }, 20);
+        },
+        setText() {
+            for (let i = 0; i < this.list.length; i++) {
+                this.text += " " + this.list[i];
+            }
         }
     },
     // 把父组件传入的arr转化成字符串
-    mounted: function () {
-        for (let i = 0; i < this.list.length; i++) {
-            this.text += " " + this.list[i];
-        }
+    mounted () {
+        this.setText();
     },
     // 更新的时候运动
-    updated: function () {
+    updated () {
         this.move();
+    },
+    watch: {
+        list() {
+            this.setText();
+        }
     }
 };
 </script>
