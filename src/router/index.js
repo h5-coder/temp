@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Index from './map/index';
+import Editor from './map/editor';
 
 // 重定向 放最后面
 import Redirect from './map/Redirect';
@@ -11,6 +12,7 @@ const router = new Router({
     // mode: 'history',
     routes: [
         Index, // 主页
+        Editor, //
         Redirect // 路由重定向(访问不存在的页面时，重定向到这个页面) 放最后面
     ]
 });

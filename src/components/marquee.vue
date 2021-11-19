@@ -28,14 +28,14 @@ export default {
     props: {
         list: {
             type: Array,
-            default: () => []
-        }
+            default: () => [],
+        },
     },
     data() {
         return {
             text: "", // 数组文字转化后的字符串
             distance: 0,
-            timer: null
+            timer: null,
         };
     },
     methods: {
@@ -58,15 +58,14 @@ export default {
             for (let i = 0; i < this.list.length; i++) {
                 this.text += " " + this.list[i];
             }
-        }
+        },
     },
     // 把父组件传入的arr转化成字符串
-    mounted () {
+    mounted() {
         this.setText();
         this.move();
     },
-    updated () {
-    },
+    updated() {},
     beforeDestroy() {
         clearInterval(this.timer);
     },
@@ -74,8 +73,8 @@ export default {
         list() {
             this.setText();
             this.$nextTick(this.move);
-        }
-    }
+        },
+    },
 };
 </script>
 <style scoped>

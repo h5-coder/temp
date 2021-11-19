@@ -15,7 +15,7 @@ export default {
     // 实例的数据对象
     data() {
         return {
-            list: []
+            list: [],
         };
     },
     // 数组或对象，用于接收来自父组件的数据
@@ -42,9 +42,13 @@ export default {
     // 过滤器
     filters: {},
     // 自定义指令
-    directive: {}
+    directive: {},
 };
 </script>
 
 <style lang="less" scoped>
+.editor {
+    width: 100%;
+    height: 300px;
+}
 </style>

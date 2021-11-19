@@ -7,6 +7,7 @@ import '@/../static/js/cookie.js';
 // import '@/../static/js/toFixed.js';
 import './filters/index.js';
 import '@/directives/index.js';
+import VueTinymce from "@packy-tang/vue-tinymce";
 
 // css
 import '../static/css/reset.css';
@@ -19,6 +20,7 @@ import './less/index.less';
 process.env.MOCK && require('./mock/index.js');
 
 Vue.use(ElementUI);
+Vue.use(VueTinymce);
 
 // Vue.config.silent = true;
 Vue.config.productionTip = false;
