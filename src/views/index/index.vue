@@ -1,6 +1,14 @@
 <template>
     <div class="">
         <my-marquee :list="list"></my-marquee>
+        <!-- 收件人组件： -->
+        <div
+            class="div"
+            ref="div"
+        ></div>
+        <el-button @click="btn('div')">按钮</el-button>
+        <el-button @click="go('/scale')">跳转</el-button>
+
     </div>
 </template>
 
@@ -23,9 +31,29 @@ export default {
     // 计算
     computed: {},
     // 方法
-    methods: {},
+    methods: {
+        requestFullscreen(element) {
+            if (element.requestFullscreen) {
+                element.requestFullscreen();
+            } else if (element.msRequestFullscreen) {
+                element.msRequestFullscreen();
+            } else if (element.mozRequestFullScreen) {
+                element.mozRequestFullScreen();
+            } else if (element.webkitRequestFullScreen) {
+                element.webkitRequestFullScreen();
+            }
+        },
+        btn(eleName) {
+            this.requestFullscreen(this.$refs[eleName]);
+        },
+        go(path) {
+            this.$router.push(path);
+        },
+    },
     // 生命周期函数 请求写在created中,echarts写在mounted中
-    created() {},
+    created() {
+        this.$meta().refresh();
+    },
     beforeMount() {},
     mounted() {
         setTimeout(() => {
@@ -50,5 +78,10 @@ export default {
 .editor {
     width: 100%;
     height: 300px;
+}
+.div {
+    width: 100%;
+    height: 100px;
+    background: red;
 }
 </style>
